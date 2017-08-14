@@ -8,11 +8,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')  // 导出目录
   },
     plugins: [
-    new webpack.optimize.UglifyJsPlugin({    //压缩代码
-       compress: {
-           warnings: false
-       },
-       except: ['$super', '$', 'exports', 'require']    //排除关键字
-    })
+    // new webpack.optimize.UglifyJsPlugin({    //压缩代码
+    //    compress: {
+    //        warnings: false
+    //    },
+    //    except: ['$super', '$', 'exports', 'require']    //排除关键字
+    // })
   ]
 };
