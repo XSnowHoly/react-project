@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Welcome from './Welcome';
 
 // function tick() {
 //   const element = (
@@ -21,7 +20,7 @@ import Welcome from './Welcome';
 
 
 ReactDOM.render(
-	<Welcome age="1717" name="xsnowholy"/>,
+	<App/>,
 	document.getElementById('root2')
 )
 

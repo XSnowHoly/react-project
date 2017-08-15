@@ -5,17 +5,31 @@ import friend from './null.jpg'
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newTodo: 'test',
+      todoList: [
+        {id:1, title:'第一个待办'}
+      ]
+    };
+  }
   render() {
+    let todos = this.state.todoList.map((item,index) => {
+      return <li>{item.title}</li>
+    })
+
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo2} className="App-logo" alt="logo" />
+        <h1>我的待办</h1>
+        <div className="inputWrapper">
+          <input type="text" value={this.state.newTodo} />
         </div>
-        <p className="App-intro">
-          <a href={friend} target="_blank">点击查看女朋友</a>
-        </p>
-      </div>
-    );
+        <ol>
+          {todos}
+        </ol>
+      </div>  
+    )
   }
 }
 
