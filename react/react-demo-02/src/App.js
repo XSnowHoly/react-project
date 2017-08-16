@@ -28,20 +28,24 @@ class App extends Component {
       )
     })
 
+
     return (
       <div className="App">
-        <h1>我的待办</h1>
+        <div className="App-header">
+          <h1>To Do List</h1>
+        </div>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo} 
             onChange={this.changTitle.bind(this)}
             onSubmit={this.addTodo.bind(this)} />
         </div>
-        <ol>
+        <ol className="todoList">
           {todos}
         </ol>
       </div>  
     )
   }
+
   delete(event, todo) {
     todo.deleted = true;
     this.setState(this.state);

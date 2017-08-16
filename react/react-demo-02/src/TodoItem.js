@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import './TodoItem.css';
+
 
 export default class TodoItem extends Component {
 	render() {
 		return (
-			<div>
-			<input type="checkbox" checked={this.props.todo.status === 'completed'}
-				onChange={this.toggle.bind(this)}/> {this.props.todo.title}
-			<button onClick={this.delete.bind(this)}>删除</button>
+			<div className="TodoItem">
+				<input type="checkbox" checked={this.props.todo.status === 'completed'}
+					onChange={this.toggle.bind(this)} id={'check'+this.props.todo.id}/>
+				<label htmlFor={'check'+this.props.todo.id}></label> 
+				<span className="title">{this.props.todo.title}</span>
+				<button onClick={this.delete.bind(this)}>
+				 	<i className="iconfont icon-chushaixuanxiang"></i>
+				</button>
 			</div>
 		)
 	}
