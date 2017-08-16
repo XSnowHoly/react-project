@@ -21,7 +21,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
 	<App/>,
-	document.getElementById('root2')
+	document.getElementById('root')
 )
 
 // setInterval(tick, 1000);
