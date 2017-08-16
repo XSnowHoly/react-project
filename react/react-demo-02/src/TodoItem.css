@@ -2,6 +2,7 @@
   padding: .5em;
   display: flex;
   align-items: center;
+  font-size: 20px;
 }
 
 .TodoItem > button {
@@ -27,6 +28,12 @@
 .TodoItem > input[type="checkbox"]{   
   position: absolute;  
   clip: rect(0,0,0,0);
+}
+
+.TodoItem > input[type="checkbox"]:checked ~ span {
+	text-decoration: line-through;
+	text-decoration-color: #999;
+	color: yellowgreen;
 }
 
 .TodoItem > input[type="checkbox"]:checked + label::before{  
