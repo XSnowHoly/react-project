@@ -9,6 +9,7 @@
 	background: transparent;
 	border: none;
 	outline: none;
+	cursor: pointer;
 }
 
 .TodoItem > input[type="checkbox"]+label::before{ 
