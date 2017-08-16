@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import logo2 from './logo2.jpg';
-import friend from './null.jpg';
+// import logo from './logo.svg';
+// import logo2 from './logo2.jpg';
+// import friend from './null.jpg';
 import 'normalize.css';
 import './reset.css'; 
 import './App.css';
@@ -30,7 +30,9 @@ class App extends Component {
       <div className="App">
         <h1>我的待办</h1>
         <div className="inputWrapper">
-          <TodoInput content={this.state.newTodo} onSubmit={this.addTodo.bind(this)} />
+          <TodoInput content={this.state.newTodo} 
+            onChange={this.changTitle.bind(this)}
+            onSubmit={this.addTodo.bind(this)} />
         </div>
         <ol>
           {todos}
@@ -47,6 +49,12 @@ class App extends Component {
     })
     this.setState({
       newTodo: '',
+      todoList: this.state.todoList
+    })
+  }
+  changTitle(event) {
+    this.setState({
+      newTodo: event.target.value,
       todoList: this.state.todoList
     })
   }
