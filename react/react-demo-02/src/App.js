@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import logo2 from './logo2.jpg';
 import friend from './null.jpg';
+import 'normalize.css';
+import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
-import 'normalize.css';
 
 class App extends Component {
   constructor(props) {
