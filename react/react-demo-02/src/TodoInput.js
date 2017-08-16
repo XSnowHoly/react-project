@@ -9,6 +9,7 @@ export default class TodoInput extends Component {
 	}
 	submit(e) {
 		if (e.key === 'Enter') {
+			if (!this.props.content) { return;} //数据为空不触发添加todo
 			this.props.onSubmit(e);
 		}
 	}
