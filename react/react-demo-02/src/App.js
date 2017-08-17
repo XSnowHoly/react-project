@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import logo2 from './logo2.jpg';
-// import friend from './null.jpg';
 import 'normalize.css';
 import './reset.css'; 
 import './App.css';
