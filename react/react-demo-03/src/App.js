@@ -4,25 +4,27 @@ import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
+import * as localStore from './localStore';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       newTodo: '',
-      todoList: []
-    };
+      todoList: localStore.load('todoList') || []
+    }
   }
   render() {
-    let todos = this.state.todoList
-      .filter((item)=> !item.deleted)
-      .map((item,index) => {
-      return (
-        <li key={index}>
-          <TodoItem todo={item} onToggle={this.toggle.bind(this)}
-            onDelete={this.delete.bind(this)}/>
-        </li>
-      )
+    // console.log(localStore.load('todoList'));
+     let todos = this.state.todoList
+       .filter((item)=> !item.deleted)
+       .map((item,index)=>{
+       return ( 
+         <li key={index} >
+           <TodoItem todo={item} onToggle={this.toggle.bind(this)} 
+             onDelete={this.delete.bind(this)}/>
+         </li>
+       )
     })
 
 
@@ -41,6 +43,10 @@ class App extends Component {
         </ol>
       </div>  
     )
+  }
+
+  componentDidUpdate() {
+    localStore.save('todoList', this.state.todoList);
   }
 
   delete(event, todo) {
