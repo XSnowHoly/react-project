@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://xsnowholy.github.io/react-project/react/react-demo-03/build",
   "dependencies": {
+    "leancloud-realtime": "^3.5.5",
+    "leancloud-storage": "^3.1.0",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
