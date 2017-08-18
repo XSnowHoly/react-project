@@ -45,10 +45,6 @@ class App extends Component {
     )
   }
 
-  componentDidUpdate() {
-    localStore.save('todoList', this.state.todoList);
-  }
-
   delete(event, todo) {
     todo.deleted = true;
     this.setState(this.state);
@@ -76,13 +72,24 @@ class App extends Component {
       todoList: this.state.todoList
     })
   }
+  componentDidUpdate() {
+    localStore.save('todoList', this.state.todoList);
+  }
 }
 
 export default App;
 
-let id = 0;
+// let id = 0;
 
 function idMaker(){
-  id += 1;
-  return id;
+  // id = localStore.load('todoid') || id;
+  // localStore.save('todoid',id+1);
+  // console.log(localStore.load('todoid'));
+  // // id += 1;
+  // // console.log("id:" + id);
+  // return id;
+   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c === 'x' ? r : (r&&0x3|0x8);
+        return v.toString(16);
+    });
 }
