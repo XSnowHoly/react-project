@@ -1,0 +1,56 @@
+.TodoItem{
+  padding: .5em;
+  margin-top: .2em;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.TodoItem:hover {
+	box-shadow:0px 2px 6px 0px #aaa;
+}
+
+.TodoItem > button {
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.TodoItem > input[type="checkbox"]+label::before{ 
+   content: '\a0';  /* non-break-block*/
+   display: inline-block;  
+   vertical-align: .1em; 
+   width: .8em; 
+   height: .8em;  
+   margin-right: .2em;  
+   border-radius: .2em;
+   background: silver; 
+   text-indent: .15em; 
+   line-height: .65em; 
+   transition: background .2s;
+}
+
+.TodoItem > input[type="checkbox"]{   
+  position: absolute;  
+  clip: rect(0,0,0,0);
+}
+
+.TodoItem > input[type="checkbox"]:checked ~ span {
+	text-decoration: line-through;
+	text-decoration-color: #999;
+	color: yellowgreen;
+}
+
+.TodoItem > input[type="checkbox"]:checked + label::before{  
+  content: '\2713';    
+  background: yellowgreen;
+}
+.TodoItem > input[type="checkbox"]:focus + label::before{  
+  box-shadow: 0 0 0 1px #58a;
+}
+
+.TodoItem>.title{
+  flex-grow: 1;
+  padding: 0 .5em;
+}

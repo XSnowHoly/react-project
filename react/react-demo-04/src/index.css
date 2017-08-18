@@ -1,0 +1,13 @@
+body {
+  background: #ddd;
+  font-family: sans-serif;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	background: url(./todo.png) 0 20% no-repeat;
+}
+
+
