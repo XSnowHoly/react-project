@@ -6,6 +6,7 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import * as localStore from './localStore';
 
+import AV from 'leancloud-storage';
 var APP_ID = 'oCYBSIymXaG9CLFlxu8W6EiG-gzGzoHsz';
 var APP_KEY = 'uxX9vmosB3hslT8NuHC0PPes';
 
