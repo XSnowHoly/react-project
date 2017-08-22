@@ -4,6 +4,8 @@ import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
+// import UserDialog from './UserDialog';
+import UserDialog from './UserDialog';
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +42,7 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
+        <UserDialog />
       </div>  
     )
   }
